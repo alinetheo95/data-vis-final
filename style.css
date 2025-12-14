@@ -50,10 +50,10 @@ body {
 }
 
 #map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
+    position: relative;  /* Changed from absolute */
     width: 100%;
+    height: 600px;  /* Set a fixed height instead of top/bottom */
+    margin-bottom: 40px;  /* Add spacing before sunburst */
 }
 
 /* Popup styling */
@@ -86,4 +86,79 @@ body {
 
 .popup-value {
     color: #333;
+}
+
+/* Sunburst Visualization Styles */
+
+#sunburst-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+#sunburst-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+#sunburst {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+}
+
+#sunburst svg {
+    max-width: 100%;
+    height: auto;
+}
+
+#sunburst-tooltip {
+    max-width: 350px;
+    line-height: 1.5;
+}
+
+#legend {
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+#legend p {
+    margin: 5px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #sunburst-container {
+    padding: 10px;
+  }
+  
+  #sunburst-container h2 {
+    font-size: 22px;
+  }
+  
+  #sunburst svg {
+    font-size: 10px;
+  }
+  
+  #sunburst-tooltip {
+    font-size: 12px;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  #sunburst svg {
+    font-size: 8px;
+  }
+  
+  #legend p {
+    font-size: 11px;
+  }
 }

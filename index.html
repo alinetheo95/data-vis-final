@@ -6,6 +6,7 @@
 
         <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
         <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+        <script src="https://d3js.org/d3.v7.min.js"></script>
     
         
     </head>
@@ -18,6 +19,14 @@
 
         <div id="map"></div>
 
+        <!-- Sunburst visualization container -->
+        <div id="sunburst-container">
+            <h2>U.S. Greenhouse Gas Emissions (2022)</h2>
+            <div id="sunburst"></div>
+            <div id="sunburst-tooltip"></div>
+        </div>
+
     <!--Link to JS-->
         <script src="map.js"></script>
+        <script src="sunburst.js"></script>
     </body>
