@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-        const file = "./dataset/energy_nyc_22_23_24.csv";
+        const file = "./dataset/slim/slim_energy_nyc_22_23_24.csv";
 
         function parse24(d) {
             return {

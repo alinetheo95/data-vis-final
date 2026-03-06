@@ -24,7 +24,7 @@ function parseCSVLine(line) {
 // Function to load and parse CSV
 async function loadDataCenters() {
     try {
-        const response = await fetch('geocoded_data_centers.csv');
+        const response = await fetch('dataset/geocoded_data_centers.csv');
         if (!response.ok) {
             throw new Error(`Failed to load CSV: ${response.statusText}`);
         }

@@ -21,7 +21,7 @@
         const COLOR_ORANGE = cssVar("--orange", "#f59e0b");
         const COLOR_PINK = cssVar("--pink", "#fb7185");
         const COLOR_GRAY = cssVar("--muted", "#94a3b8");
-        const file24 = "dataset/energy_nyc_22_23_24.csv";
+        const file24 = "dataset/slim/slim_energy_nyc_22_23_24.csv";
 
         function parse24(d) {
             return {

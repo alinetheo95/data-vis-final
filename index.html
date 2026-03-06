@@ -1,10 +1,9 @@
-<html lang="en">
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>What Happens When We Regulate — And When We Don’t</title>
+    <title>The Invisible Layers</title>
   
   
     <!-- D3, Chart -->
@@ -19,59 +18,190 @@
   </head> 
 
 <body>
-  <!-- Hero / Global Intro -->  
+  <!--Intro -->  
   <section class="hero" id="intro">
     <div class="content">
-      <h1>The Power of Regulation</h1>  
-      <h2>From NYC data centers to the Montreal Protocol — and back to building policy</h2>
-      <p>
-        Global warming is a pressing crisis shaped by two forces: the <strong>built environment</strong> and <strong>policy</strong>.
-      </p>
-      <p>
-        This project uses <strong>CO₂‑equivalent (CO₂e)</strong> as a shared metric to connect atmospheric change,
-        building performance, and regulation across scales.
-      </p>
-      <p>
-        We begin with <strong>New York City’s embedded data centers</strong>, step back to the
-        <strong>Montreal Protocol</strong> as a global success story, and return to <strong>LEED</strong>
-        to ask how building‑scale regulation can — and cannot — manage rapidly growing digital infrastructure.
-      </p>
+      <h1>The Invisible Layers</h1>  
+      <h2>Environmental Impact of the Digital Economy </h2>
+      <p>An examination of data center carbon emissions in the context of proven regulatory frameworks. Through comparative analysis of the Montreal Protocol’s success in reversing ozone depletion 
+    and LEED’s transformation of building performance standards, this research demonstrates how measurement, transparency, and policy intervention can address the rapidly growing environmental 
+    burden of digital infrastructure.</p>
     </div>
   </section>
 
-  <!-- PART I: NYC DATA CENTERS AS A FRONTLINE CASE -->
+  <!-- PART I-->
   <section class="section" id="nyc-case">
     <div class="part-divider" id="part-1">
       <span class="part-kicker">PART 1</span>
-      <h2 class="part-title">Data Centers in New York City</h2>
+      <h2 class="part-title">The Built Environment</h2>
     </div>
+    <p> The built environment–our buildings, infrastructure, and energy systems–accounts for 38% of U.S. carbon dioxide emissions and consumes 72% of our electricity. Despite this enormous footprint, 
+      much of this infrastructure operates without comprehensive environmental oversight. As architects and designers, we have both an opportunity and a responsibility to address this crisis at its source: 
+      through thoughtful design, as well as advocacy for effective policy.</p>
+  </section>
+
+  <section class="section" id="nyc-case">
+    <div class="part-divider" id="part-1">
+      <h2 class="part-title">The Standardization of Greenhouse Gas Emissions</h2>
+    </div>
+    <p> CO2e, or carbon dioxide equivalent, is a standardized metric used to measure and compare the climate impact of various greenhouse gases. This includes, but is not limited to, key greenhouse gases 
+      such as carbon dioxide, methane, nitrous oxide, and fluorinated gases (CFCs, HFCs, HCFCs). Each greenhouse gas is assigned a global warming potential value that represents its warming impact over a 
+      specific period relative to carbon dioxide. The equation below allows for a standardization providing a common unit of measurement so businesses and countries can report total climate change impact as a single, comparable number.</p>
     <p>
-      NYC’s large buildings that report hosting data centers emitted approximately <strong>3.6 million metric tons of CO₂e</strong> in <strong>2023</strong>—roughly equal to the annual
-      electricity-related emissions of <strong>~480,000 U.S. homes</strong> (EPA equivalencies, using ~7.5 metric tons CO₂ per home per year).
-      That’s more households than all of San Francisco.
+    CO2e = (Mass of GHG) x (GWP of the gas)
+    <p> The standardization of all greenhouse gases can help governments track and manage emissions and report progression towards shared climate goals, and allow for introduction of policy.</p>
+  </section>
+
+      <!-- Sunburst visualization container -->
+    <div id="sunburst-container" class="viz-block" style="margin-top:28px;">
+      <h3>U.S. Greenhouse Gas Emissions (2022)</h3>
+      <div id="sunburst"></div>
+      <div id="sunburst-tooltip" aria-hidden="true"></div>
+    </div>
+
+  <!-- NYC Map of Data Centers -->
+  <section class="section" id="data-center-map">
+    <div class="part-divider" id="part-1">
+      <h2 class="part-title">The Rise of Data Centers and CO2</h2>
+    </div>
+    <p>Data centers are essential infrastructure in the digital economy, yet their rapidly growing carbon footprint is largely exempt from environmental regulation. The construction of data centers has increased tremendously with the 
+      introduction of LLM’s in recent years. Data centers require copious amounts of energy to operate, accounting for 1.8% of electricity use in the United States. This may not seem like much, but studies have shown that with the 
+      rapid growth developments of AI, this percentage is predicted to increase exponentially over the next decade. With no regulations currently in place for data centers, the energy usage can quickly become damaging to the environment 
+      and will continue to deplete our resources.</p>
+
+    <div id="map" style="width:100%; height:600px; border-radius:12px; margin:0px 0;"></div>
+    <p class="data-source">
+      <strong>Data source:</strong>
+      Geocoded NYC data centers derived from
+      NYC Building Energy and Water Data Disclosure for Local Law 84 (2020–2024).
     </p>
+    <p>The sources of energy for these data centers also matter. According to a recent study, approximately 56% of the electricity consumed by data centers in the United States came from fossil fuel-burning power plants, and 16% was from 
+      coal power plants. This high dependence on coal is a significant contributor to the carbon footprint of the data center industry.</p>
+
+    <p>Distance compounds the problem. Data centers require massive amounts of water for cooling, and this water is often sourced from far away, requiring additional energy for pumping and transport. About one-fifth of data center servers’ 
+      direct water footprint comes from moderately to highly water-stressed watersheds, meaning facilities are drawing resources from regions that can least afford to spare them. When non-renewable energy sources, long distance resource 
+      transmission, and geographic inefficiency are added together, researchers estimate data centers contribute 0.5% of total carbon emissions.</p>
+  </section>
+
+  <section class="section" id="nyc-case">
+    <div class="part-divider" id="part-1">
+      <h2 class="part-title">The Transparency Gap</h2>
+    </div>
+    <p>0.5% of carbon emissions may not seem like much, but currently these data centers are not required to report energy usage as public information. In our research, we found that publicly available data for data centers is limited or 
+      behind a paywall, making it difficult to determine exactly how damaging data center operations currently are and will become. The lack of mandatory reporting makes it impossible for researchers, policy makers, and the public to 
+      understand the true scale of the problem.</p>
+  </section>
+
+  <!-- Global Scale: Data Centers by Country -->
+  <section class="section" id="part-data-centers-global">
+    <h2>Global Competition for Artificial Intelligence</h2>
+    <p>Data centers are the physical engines behind AI and cloud computing and account for a rapidly growing share of global electricity demand. This infrastructure is largely unregulated, concentrating energy use, water consumption, 
+      and CO2 emissions in the United States.</p>
     <p>
-      But unlike the hyperscale campuses being built in rural Virginia, Ohio, or Iowa, New York’s data center boom is happening <strong>vertically</strong>—tucked inside ordinary office towers.
-      These embedded facilities often occupy only a fraction of a building’s floor area, yet they exert an outsized impact on energy demand.
+      The horizontal bar chart below compares the number of data centers by country.
     </p>
-    <p>
-      From <strong>2023</strong> to <strong>2024</strong>, the city added <strong>220,057.8 sq ft</strong> of reported data center space,
-      even as the number of buildings reporting data centers decreased. In other words, fewer buildings now host far larger and more energy-intensive data centers.
-    </p>
-    <p>
-      Using <strong>CO₂‑equivalent (CO₂e)</strong> as a shared metric, we trace how this footprint concentrates into fewer, more energy‑intensive buildings—and why data centers behave like a distinct,
-      continuous‑load use case that existing building‑wide frameworks do not explicitly isolate.
+
+    <div class="data-center-chart">
+      <h3>Data Centers per Country</h3>
+      <p>
+        The United States hosts the largest share of the world’s data centers,
+        followed by the United Kingdom, Germany, China, and France. This imbalance
+        means that a relatively small number of countries bear a disproportionate
+        share of the energy and emissions burden of the digital economy.
+      </p>
+      <div class="mini-key" aria-label="Legend" style="display:flex;align-items:center;gap:10px;margin:10px 0 8px 0;font-size:0.95rem;opacity:0.95;">
+        <span style="width:10px;height:10px;border-radius:999px;background:rgba(86,189,248,0.90);display:inline-block;"></span>
+        <span>Data center count (facilities)</span>
+      </div>
+      <canvas id="myChart" height="130"></canvas>
+    </div>
+
+<script>
+  (function () {
+    const el = document.getElementById('myChart');
+    if (!el || typeof Chart === 'undefined') return;
+
+    const existing = Chart.getChart(el);
+    if (existing) existing.destroy();
+
+    window.__dcCountryChart = new Chart(el, {
+      type: 'bar',
+      data: {
+        labels: ['US', 'UK', 'GER', 'CHN', 'FRA', 'CAN', 'AUS', 'IND', 'JPN', 'ITL'],
+        datasets: [
+          {
+            label: 'Data Centers Per Country',
+            data: [4165, 499, 487, 381, 321, 293, 274, 271, 242, 209],
+            backgroundColor: 'rgba(86,189,248,0.78)',
+            borderColor: 'rgba(86,189,248,1)',
+            hoverBackgroundColor: 'rgba(86,189,248,0.52)',
+            hoverBorderColor: 'rgba(245,245,247,0.80)',
+            borderWidth: 1.5,
+            barThickness: 15,
+            categoryPercentage: 0.4,
+            barPercentage: 0.9
+          }
+        ]
+      },
+      options: {
+        indexAxis: 'y',
+        plugins: {
+          legend: {
+            labels: {
+              color: 'rgba(245,245,247,0.92)',
+              font: { size: 11 }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.parsed.x.toLocaleString()} data centers`
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: 'rgba(255,255,255,0.10)', drawBorder: false },
+            ticks: {
+              color: 'rgba(207,214,223,0.85)',
+              callback: function (value) {
+                return value.toLocaleString();
+              }
+            }
+          },
+          y: {
+            beginAtZero: true,
+            grid: { color: 'rgba(255,255,255,0.06)', drawBorder: false },
+            ticks: { color: 'rgba(207,214,223,0.85)' }
+          }
+        }
+      }
+    });
+  })();
+</script>
+
+    <p class="data-source">
+      <strong>Data source:</strong>
+      Country-level data center counts from
+      <a href="https://www.statista.com/statistics/1228433/data-centers-worldwide-by-country/"
+         target="_blank" rel="noopener noreferrer">
+        Statista — “Data centers worldwide by country”
+      </a>.
     </p>
   </section>
 
   <!-- NYC Data Center Energy Line Chart -->
   <section class="section" id="nyc-linechart-section">
-    <h2>NYC Data Center Emissions Over Time</h2>
+    <h2>Location Matters: The Geography of Carbon</h2>
+    <p>Not all data centers carry the same carbon footprint. A facility in New York City drawing from the region’s relatively diversified grid, including nuclear, hydroelectric, and natural gas, produces significantly less 
+      CO2 than an identical facility in the Midwest powered primarily by coal. Without policy frameworks that account for grid carbon intensity, the market has no mechanism to discourage construction in high-emission regions.</p>
+
+    <p>While specific energy data for individual data centers in the Midwest was not publicly available at the time of this study, we can infer that coal-dependent areas carry substantially higher carbon footprints than their 
+      New York City counterparts. Additionally, Midwestern data centers tend to be more geographically dispersed and must service population centers located farther away, resulting in greater transmission losses and network 
+      energy consumption, ultimately increasing their total carbon impact even greater. This chart visualizes the energy use trend of data centers in New York City, linking local infrastructure to the broader national and 
+      global carbon-emissions narrative.</p>
+
     <p class="muted" style="margin-top:6px;">
-      Hover over the legend to see values.
-    </p>
-    <p>
-      The line chart below summarizes annual <strong>CO₂e</strong> emissions for NYC large buildings that report hosting data centers.
+       The line chart below summarizes annual <strong>CO₂e</strong> emissions for NYC large buildings that report hosting data centers.
       Read it as the city-scale signal behind the building-to-building comparisons that follow.
     </p>
 
@@ -143,7 +273,7 @@
 </p>
 
 <h3 class="chart-title">
-  Energy Use Intensity: Office Buildings w/ and w/out Data Centers
+  Energy Use Intensity: Office Buildings with and without Data Centers
 </h3>
 
 <p class="chart-subtitle">
@@ -223,24 +353,6 @@
     </p>
   </section>
 
-  
-
-  <!-- NYC Map of Data Centers -->
-  <section class="section" id="data-center-map">
-    <h2>Locating NYC’s Data Centers</h2>
-    <p>
-      This interactive map shows the distribution of large buildings that contain data centers
-      in New York City. It links the atmospheric story back to concrete parcels and addresses,
-      making the digital footprint visible at the scale of blocks and lots.
-    </p>
-
-    <div id="map" style="width:100%; height:600px; border-radius:12px; margin:0px 0;"></div>
-    <p class="data-source">
-      <strong>Data source:</strong>
-      Geocoded NYC data centers derived from
-      NYC Building Energy and Water Data Disclosure for Local Law 84 (2020–2024).
-    </p>
-  </section>
 
   <!-- PART II: DATA CENTERS AT NATIONAL AND GLOBAL SCALE -->
   <section class="section" id="data-centers-resources">
@@ -491,138 +603,16 @@
     </p>
   </section>
 
-  <!-- National Scale: U.S. Emissions and Data Center Geography -->
+  <!-- Why Policy Works bottom part isn't working, probably delete-->
   <section class="section" id="us-emissions">
-    <h2>U.S. Energy CO₂ Emissions</h2>
-    <p>
-      At the national scale, we connect data center growth to broader U.S. energy emissions.
-      The maps below depict total energy-related CO₂ emissions by state
-      (million metric tons of CO₂) for <strong>2000</strong>, <strong>2012</strong>,
-      and <strong>2023</strong>, with data center locations layered on top.
-      The maps can be explored as scrollable layers to show how emissions shift over time.
-    </p>
-    <p>
-      States like Texas and Virginia concentrate both high emissions and large clusters
-      of data centers, while New York sits between these extremes. Together, these layers show
-      how the geography of carbon emissions and the geography of digital infrastructure
-      are beginning to overlap and reinforce one another.
-    </p>
+    <h2>Why Policy Works: From Measurement to Action</h2>
+    <p>Data centers operate without mandatory emissions reporting, efficiency standards, or accountability for their growing share of national energy demand. Meanwhile, the environmental challenges we have alleviated 
+      share a common pattern: comprehensive policy frameworks built on transparent data, enforceable standards, and international cooperation.</p>
+
+    <p>As we face the exponential growth of AI-driven infrastructure, we don’t need to reinvent the policy playbook. We need to apply the lessons we’ve already learned to the technologies reshaping our energy future.</p>
 
     <div id="usEmissionsMaps" style="width:100%; height:480px; border-radius:12px;"></div>
 
-    <!-- Sunburst visualization container -->
-    <div id="sunburst-container" class="viz-block" style="margin-top:28px;">
-      <h3>U.S. Greenhouse Gas Emissions (2022)</h3>
-      <div id="sunburst"></div>
-      <div id="sunburst-tooltip" aria-hidden="true"></div>
-    </div>
-
-    <p class="data-source">
-      <strong>Data sources:</strong>
-      U.S. Energy Information Administration (state-level energy CO₂ emissions);
-      compiled data center location datasets exported to GeoJSON for web mapping.
-    </p>
-  </section>
-
-  <!-- Global Scale: Data Centers by Country -->
-  <section class="section" id="part-data-centers-global">
-    <h2>Global Distribution of Data Centers</h2>
-    <p>
-      At the global scale, data centers are unevenly distributed. A small number of countries
-      host a large share of the world’s facilities, concentrating energy use, water consumption,
-      and CO₂e emissions in particular regions. Unlike the case of CFCs in the 1980s,
-      this growth has not yet been matched by a binding international agreement.
-    </p>
-    <p>
-      The horizontal bar chart below compares the number of data centers by country.
-    </p>
-
-    <div class="data-center-chart">
-      <h3>Data Centers per Country</h3>
-      <p>
-        The United States hosts the largest share of the world’s data centers,
-        followed by the United Kingdom, Germany, China, and France. This imbalance
-        means that a relatively small number of countries bear a disproportionate
-        share of the energy and emissions burden of the digital economy.
-      </p>
-      <div class="mini-key" aria-label="Legend" style="display:flex;align-items:center;gap:10px;margin:10px 0 8px 0;font-size:0.95rem;opacity:0.95;">
-        <span style="width:10px;height:10px;border-radius:999px;background:rgba(86,189,248,0.90);display:inline-block;"></span>
-        <span>Data center count (facilities)</span>
-      </div>
-      <canvas id="myChart" height="130"></canvas>
-    </div>
-
-<script>
-  (function () {
-    const el = document.getElementById('myChart');
-    if (!el || typeof Chart === 'undefined') return;
-
-    const existing = Chart.getChart(el);
-    if (existing) existing.destroy();
-
-    window.__dcCountryChart = new Chart(el, {
-      type: 'bar',
-      data: {
-        labels: ['US', 'UK', 'GER', 'CHN', 'FRA', 'CAN', 'AUS', 'IND', 'JPN', 'ITL'],
-        datasets: [
-          {
-            label: 'Data Centers Per Country',
-            data: [4165, 499, 487, 381, 321, 293, 274, 271, 242, 209],
-            backgroundColor: 'rgba(86,189,248,0.78)',
-            borderColor: 'rgba(86,189,248,1)',
-            hoverBackgroundColor: 'rgba(86,189,248,0.52)',
-            hoverBorderColor: 'rgba(245,245,247,0.80)',
-            borderWidth: 1.5,
-            barThickness: 15,
-            categoryPercentage: 0.4,
-            barPercentage: 0.9
-          }
-        ]
-      },
-      options: {
-        indexAxis: 'y',
-        plugins: {
-          legend: {
-            labels: {
-              color: 'rgba(245,245,247,0.92)',
-              font: { size: 11 }
-            }
-          },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => `${ctx.parsed.x.toLocaleString()} data centers`
-            }
-          }
-        },
-        scales: {
-          x: {
-            grid: { color: 'rgba(255,255,255,0.10)', drawBorder: false },
-            ticks: {
-              color: 'rgba(207,214,223,0.85)',
-              callback: function (value) {
-                return value.toLocaleString();
-              }
-            }
-          },
-          y: {
-            beginAtZero: true,
-            grid: { color: 'rgba(255,255,255,0.06)', drawBorder: false },
-            ticks: { color: 'rgba(207,214,223,0.85)' }
-          }
-        }
-      }
-    });
-  })();
-</script>
-
-    <p class="data-source">
-      <strong>Data source:</strong>
-      Country-level data center counts from
-      <a href="https://www.statista.com/statistics/1228433/data-centers-worldwide-by-country/"
-         target="_blank" rel="noopener noreferrer">
-        Statista — “Data centers worldwide by country”
-      </a>.
-    </p>
   </section>
 
   <!-- PART III: OZONE AND THE MONTREAL PROTOCOL -->
@@ -631,32 +621,17 @@
       <span class="part-kicker">PART 3–1</span>
       <h2 class="part-title">Ozone Recovery and the Montreal Protocol</h2>
     </div>
-    <p>
-      Next, we step back to an earlier atmospheric crisis to see what effective regulation can achieve.
-      In the 1970s and 80s, scientists warned that chlorofluorocarbons (CFCs) were thinning the ozone layer—
-      an invisible but globally shared system.
-    </p>
-    <p>
-      The <strong>Montreal Protocol</strong>, agreed in 1987 and entering into force in
-      <strong>1989</strong>, became a turning point: a proof that invisible atmospheric damage
-      could be reversed through binding international regulation.
-    </p>
+    <p>The Montreal Protocol, signed in 1987, is often described as one of the most successful environmental treaties. It was put into place following decades of scientific warnings about chlorofluorocarbons (CFCs), 
+      chemicals used in refrigerants and aerosols that were found to destroy the ozone layer. Through coordinated global action, nations agreed to phase out these substances, and satellite data now shows a gradual 
+      healing of the ozone layer - clear evidence that science, regulation, and collection action can reverse planetary damage.</p>
+
+    <p>The Montreal Protocol has continued to evolve as science and technology have advanced. Amendments such as those adopted in London and Kigali expanded its scope to include additional substances like 
+      hydrochlorofluorocarbons (HCFCs) and hydrofluorocarbons (HFCs). This living framework shows how international regulation can translate data into environmental recovery - an example for today’s challenge of 
+      governing carbon emissions from energy-intensive infrastructure.</p>
   </section>
 
   <!-- Montreal Protocol Timeline -->
   <section class="section timeline" id="montreal-timeline">
-    <h2>The Montreal Protocol: A Timeline of Global Action</h2>
-    <p>
-      The Montreal Protocol is often described as one of humanity’s most successful environmental
-      treaties. It followed decades of scientific warnings about CFCs and their impact on the ozone
-      layer. Through coordinated global action, nations agreed to phase out ozone-depleting substances —
-      and satellite data now shows a gradual healing of the ozone layer.
-    </p>
-    <p>
-      Later amendments expanded the treaty’s scope to additional chemicals and strengthened enforcement mechanisms.
-      Crucially, the Protocol translated an invisible atmospheric problem into measurable targets, shared responsibility,
-      and binding timelines—creating a template for governing other high-impact systems.
-    </p>
 
     <div class="timeline-container">
       <div class="timeline-item">
@@ -700,20 +675,17 @@
   <!-- Global Ozone Visualization -->
   <section class="section" id="ozone-visualization">
     <h2>Global Ozone Recovery After the Montreal Protocol</h2>
-    <p>
-      Using NASA satellite products, we visualize the long-term change in global total column ozone
-      from the late 1970s to the present. The curve shows a clear decline during the height of CFC use,
-      followed by stabilization and gradual recovery after the Montreal Protocol took effect.
-    </p>
+    <p>The Montreal Protocol (1987) is widely recognized as one of the most effective environmental agreements. By phasing out ozone-depleting substances such as CFCs and HFC’s, it set in motion a measurable recovery 
+      of the ozone layer within just a few decades.</p>
+    
+      <p>The Montreal Protocol shows that collective regulation works: over 190 nations agreed to phase out ozone-depleting chemicals, and the results are visible in the atmosphere today. In contrast, carbon emissions 
+        from digital infrastructure continue to rise without consistent global or national policy frameworks. Our visualizations compare how the presence of strong policy versus its absence shapes the trajectory of 
+        atmospheric change and environmental recovery.</p>
 
     <div id="ozone-chart-block">
       <h3 id="title">Global Total Column Ozone — 1979–2024</h3>
 
       
-
-      <div id="legend">
-        <span class="swatch"></span><span>Global total column ozone (DU)</span>
-      </div>
 
       <div id="chart"></div>
       <p style="font-size:0.9rem;margin-top:12px;max-width:none;">
@@ -736,14 +708,19 @@
   <section class="section" id="nyc-leed">
     <div class="part-divider" id="part-3-2">
       <span class="part-kicker">PART 3–2</span>
-      <h2 class="part-title">LEED and Building-Scale Regulation</h2>
+      <h2 class="part-title">LEED Certification: Translating Building Performance into Market Action</h2>
     </div>
 
     <p>
       The Montreal Protocol worked by turning atmospheric science into enforceable rules.
-      At the city scale, <strong>LEED</strong> translates a similar logic by converting building performance—energy, water, and emissions—
+      At the city scale, LEED translates a similar logic by converting building performance—energy, water, and emissions—
       into measurable criteria that influence design, operations, and investment.
     </p>
+
+    <p>The U.S. Green Building Council’s LEED certification system, launched in 2000, created a voluntary framework that transformed industry practice through transparency and standardization. By requiring
+      buildings to measure and report energy consumption, water use, and material impacts, LEED made environmental performance visible and comparable.</p>
+
+
     <p class="lede">
       LEED demonstrates how regulation can shape building performance—but it also reveals where
       building-scale metrics begin to break down for energy-intensive uses like data centers.
@@ -851,7 +828,6 @@
             <strong>Note:</strong> Values reproduced from the table (Certified → Silver → Gold → Platinum) for energy, CO₂e, commuting CO₂e, and occupant satisfaction.
           </p>
         </div>
-    </section>
         <script>
           (function () {
             const el = document.getElementById('leedOutcomesChart');
@@ -979,9 +955,7 @@
             });
           })();
         </script>
-  </section>
-
-  
+    </section>
 
   <section class="section" id="nyc-leed-credits">
     <h2>LEED credit categories</h2>
@@ -1235,18 +1209,13 @@
   <!-- Final Comparison / Conclusion -->
   <section class="section conclusion" id="conclusion">
     <h2>Data Centers Need Regulation</h2>
-    <p>
-      The Montreal Protocol shows that strong, science‑based regulation can reverse damage in invisible systems.
-    </p>
-    <p>
-      LEED demonstrates that building‑scale policy can shape performance — but it also reveals limits when
-      energy‑intensive uses are embedded inside larger buildings.
-    </p>
-    <p>
-      Data centers are expanding rapidly while remaining largely invisible inside buildings and datasets.
-      New York’s case shows why they need <strong>data center–specific disclosure and performance standards</strong>—
-      so digital infrastructure does not become a long‑lived layer of urban emissions inside an already regulated city.
-    </p>
+    <p>History has shown us that voluntary measures alone cannot address environmental challenges at scale. The success of the Montreal Protocol in healing the ozone layer and LEED certification in transforming building practices demonstrates that policy frameworks can drive measurable change.</p>
+
+    <h2>Policy Works - When it Exists</h2>
+    <p>The Montreal Protocol engaged 197 nations to phase out ozone-depleting substances, proving the international cooperation can reverse planetary damage. LEED demonstrated that transparency and certification can transform entire industries without waiting for government mandates. Both frameworks 
+      share a foundation: measurement enables accountability, and accountability drives change.</p>
+
+    <p>As we enter a new era of data-driven and AI-driven growth, the same urgency and cooperation are needed to govern the emissions of the digital age. If coordinated policy has proven to work in multiple scenarios, it can again – but only if it is extended to the infrastructures that are now driving carbon emissions.</p>
   </section>
 
   <footer>
@@ -1277,18 +1246,4 @@
 <script defer src="nyc_top10.js"></script>
 
 </body>
-</html> 
-
-        <div id="map"></div>
-
-        <!-- Sunburst visualization container -->
-        <div id="sunburst-container">
-            <h2>U.S. Greenhouse Gas Emissions (2022)</h2>
-            <div id="sunburst"></div>
-            <div id="sunburst-tooltip"></div>
-        </div>
-
-    <!--Link to JS-->
-        <script src="map.js"></script>
-        <script src="sunburst.js"></script>
-    </body>
+</html>

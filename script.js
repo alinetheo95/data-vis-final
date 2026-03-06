@@ -25,8 +25,7 @@
       entries.forEach(entry=>{
         if(entry.isIntersecting){
           entry.target.classList.add('is-visible');
-          // Uncomment if you want one-time reveal
-          // io.unobserve(entry.target);
+          io.unobserve(entry.target);
         }
       });
     }, { threshold: 0.15 });
@@ -83,11 +82,10 @@
     const el = document.getElementById("dcEnergyCompareChart");
     if (!el || typeof Chart === "undefined") return;
 
-    // Destroy previous chart instance on hot reload / repeated init
-    if (el.__chartInstance) {
-      try { el.__chartInstance.destroy(); } catch (e) {}
-      el.__chartInstance = null;
-    }
+    // Destroy any existing Chart.js instance on this canvas (including inline-created ones)
+    const existing = Chart.getChart(el);
+    if (existing) existing.destroy();
+    el.__chartInstance = null;
 
     // Values approximated from the reference graphic (TWh)
     const labels = [

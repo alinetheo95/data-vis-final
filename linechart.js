@@ -20,9 +20,9 @@
   // Glows tuned per-series
   const COLOR_ENERGY_GLOW = "rgba(86,189,248,0.60)";
   const COLOR_GHG_GLOW = "rgba(119,192,73,0.55)";
-const file20 = "dataset/energy_nyc_20.csv";
-const file21 = "dataset/energy_nyc_21.csv";
-const file22 = "dataset/energy_nyc_22_23_24.csv";
+const file20 = "dataset/slim/slim_energy_nyc_20.csv";
+const file21 = "dataset/slim/slim_energy_nyc_21.csv";
+const file22 = "dataset/slim/slim_energy_nyc_22_23_24.csv";
 
 
 function parse22(d) {

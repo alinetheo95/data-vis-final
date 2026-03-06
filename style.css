@@ -41,17 +41,18 @@
 }
 
 body {
-    font-family: "Courier New", Courier, monospace;
-    background-color: #000000;
-    color: #cfcfcf;
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #fff;
     padding: 40px;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--bg, #05060a);
-  color: var(--text, #f5f5f7);
+  background-color: #000;
+  color: #fff;
 }
 
 .container {
@@ -72,26 +73,30 @@ section {
 
 /* ===== TYPOGRAPHY ===== */
 h1, h2 {
-  color: var(--text);
   margin-bottom: 20px;
-  letter-spacing: 0.04em;
-  text-transform: none;
+  font-weight: 300;
+  letter-spacing: 0.3rem;
 }
 
 h1 {
-  font-size: 3.2rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 300;
 }
 
 h2 {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 300;
 }
 
 h3 {
-  color: var(--blue);
   margin-bottom: 16px;
-  font-weight: 600;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+}
+
+h4 {
+  font-weight: 300;
+  letter-spacing: 0.1rem;
 }
 
 .title-section {
@@ -100,37 +105,44 @@ h3 {
 }
 
 .title-section h1 {
-    font-size: 7rem;
-    font-weight: normal;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 0.3rem;
 }
 
 .header-section{
     padding-top: 0px;
     margin-bottom: 200px;
     text-align: left;
-    font-size: 2rem;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.15rem;
+    opacity: 0.8;
 }
 
 .subtitle-section {
     padding-top: 0px;
     margin-bottom: 20px;
     text-align: left;
-    font-size: 2rem;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.15rem;
 }
 
 .text-section {
     padding-top: 0px;
     margin-bottom: 60px;
     text-align: left;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 p {
   max-width: none;
-  line-height: 1.7;
-  font-size: 1.05rem;
+  line-height: 1.6;
+  font-size: 0.9rem;
   margin-bottom: 30px;
-  color: var(--text-dim);
+  letter-spacing: 0.05rem;
+  opacity: 0.9;
 }
 
 /* ===== SLIDER ===== */
@@ -169,8 +181,8 @@ p {
 #yearLabel {
   color: #f5f5f7;
   font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
 }
 
 /* ===== HERO SECTION ===== */
@@ -187,19 +199,23 @@ p {
 }
 
 .hero h1 {
-  font-size: 3.6rem;
-  letter-spacing: 0.08em;
+  font-size: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.3rem;
 }
 
 .hero h2 {
-  font-weight: 500;
-  color: var(--blue);
+  font-weight: 300;
+  letter-spacing: 0.15rem;
   margin-bottom: 20px;
+  opacity: 0.8;
 }
 
 .hero p {
-  color: var(--text-dim);
-  font-size: 1.08rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  letter-spacing: 0.05rem;
+  opacity: 0.9;
 }
 
 /* ===== VISUALIZATION PLACEHOLDER ===== */
@@ -212,9 +228,9 @@ p {
   align-items: center;
   justify-content: center;
   color: var(--blue);
-  font-weight: 600;
+  font-weight: 300;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.15rem;
 }
 
 /* ===== CONCLUSION SECTION ===== */
@@ -224,12 +240,17 @@ p {
 }
 
 .conclusion h2 {
-  color: var(--blue);
+  font-weight: 300;
+  letter-spacing: 0.3rem;
 }
 
 .conclusion p {
   max-width: 85%;
   margin: 0 auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  letter-spacing: 0.05rem;
+  opacity: 0.9;
 }
 
 /* ===== FOOTER ===== */
@@ -245,7 +266,8 @@ footer {
 /* ===== OZONE CHARTS CONTROLS ===== */
 #ozone-charts-block label {
   color: var(--blue);
-  font-weight: 600;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
 }
 
 #ozone-charts-block select {
@@ -254,7 +276,7 @@ footer {
   border-radius: 6px;
   background-color: rgba(255,255,255,0.03);
   color: var(--text);
-  font-weight: 500;
+  font-weight: 300;
 }
 
 #ozone-charts-block select:focus {
@@ -354,8 +376,8 @@ footer {
   display: inline-block;
   min-width: 60px;
   color: var(--blue);
-  font-weight: 800;
-  letter-spacing: 0.14em;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
   margin-right: 8px;
   text-transform: uppercase;
 }
@@ -363,6 +385,10 @@ footer {
 .timeline-item p {
   margin: 6px 0 0;
   color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  letter-spacing: 0.05rem;
+  opacity: 0.9;
 }
 
 .timeline-item.is-visible {
@@ -445,12 +471,13 @@ footer {
 }
 
 .popup-title {
-    font-weight: bold;
+    font-weight: 300;
     font-size: 16px;
     margin-bottom: 10px;
     color: #2c3e50;
     border-bottom: 2px solid #3498db;
     padding-bottom: 5px;
+    letter-spacing: 0.1rem;
 }
 
 .popup-row {
@@ -459,7 +486,7 @@ footer {
 }
 
 .popup-label {
-    font-weight: bold;
+    font-weight: 300;
     color: #555;
     display: inline-block;
     width: 80px;
@@ -482,6 +509,8 @@ footer {
     color: #333;
     margin-bottom: 20px;
     font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
 }
 
 #sunburst {
@@ -528,6 +557,8 @@ footer {
 #title {
   margin-bottom: 1.2rem;
   color: var(--text);
+  font-weight: 300;
+  letter-spacing: 0.15rem;
 }
 
 #white {
@@ -545,6 +576,8 @@ footer {
   font-size: 1rem;
   margin-bottom: 8px;
   color: var(--blue);
+  font-weight: 300;
+  letter-spacing: 0.1rem;
 }
 
 .references ul {
@@ -667,6 +700,8 @@ footer {
 
 .lede-subhead h3{
   margin-bottom: 6px;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
 }
 
 .lede-pathways{
@@ -690,8 +725,8 @@ footer {
 }
 
 .lede-path-title{
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
   color: rgba(245,245,247,0.92);
   margin-bottom: 4px;
 }
@@ -745,7 +780,8 @@ footer {
 .leed-credit-card h4 {
   margin: 0;
   font-size: 1.02rem;
-  letter-spacing: 0.2px;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
 }
 
 .leed-credit-card p {
@@ -793,8 +829,8 @@ footer {
 
 .stat-num{
   font-size:1.45rem;
-  font-weight:700;
-  letter-spacing:0.2px;
+  font-weight:300;
+  letter-spacing:0.15rem;
   color:rgba(245,245,247,0.92);
 }
 
@@ -897,8 +933,8 @@ footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: 300;
+  letter-spacing: 0.08rem;
   font-size: 0.75rem;
   color: rgba(0,0,0,0.85);
   margin-bottom: 10px;
@@ -906,8 +942,9 @@ footer {
 }
 
 .leed-level-title {
-  font-weight: 700;
+  font-weight: 300;
   font-size: 1.05rem;
+  letter-spacing: 0.1rem;
   color: rgba(245,245,247,0.92);
   margin-bottom: 6px;
 }
@@ -941,6 +978,8 @@ footer {
 
 #leed-outcomes h3 {
   margin-top: 0;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
 }
 
 #leed-outcomes canvas {
@@ -961,7 +1000,6 @@ footer {
   display: inline-block;
   letter-spacing: 0.16em;
   font-size: 0.95rem;
-  color: var(--lime);
   margin-bottom: 10px;
 }
 
@@ -969,19 +1007,23 @@ footer {
   margin: 0;
   font-size: 2.4rem;
   line-height: 1.1;
-  color: var(--orange); 
-  font-weight: 700;
+  font-weight: 300;
+  letter-spacing: 0.3rem;
 }
 
 .chart-title {
   margin-top: 48px;
   margin-bottom: 8px;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
 }
 
 .chart-subtitle {
   margin-bottom: 24px;
   color: var(--text-dim);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  opacity: 0.9;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
@@ -1037,6 +1079,25 @@ footer {
 
   .part-divider{ padding: 22px 10px 18px 10px; }
   .part-divider .part-title{ font-size: 1.8rem; }
+  
+  .title-section h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .header-section {
+    font-size: 0.85rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .subtitle-section {
+    font-size: 0.85rem;
+    letter-spacing: 0.1rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
 }
 
 @media (max-width: 640px) {
