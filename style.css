@@ -11,26 +11,26 @@
   --gray: #a8b0bf;
 
   /* Core palette */
-  --blue: #2f5bff;
-  --sky: #56bdf8;
-  --orange: #f0a53a;
-  --lavender: #b8c2ff;
+  --blue: #25baed;
+  --sky: #67c5ac;
+  --orange: #f15f31;
+  --lavender: #cba4cc;
   --lime: #77c049;
-  --red: #ff6b7a;
+  --red: #ec2c3d;
 
   /* Soft / glow helpers */
-  --blue-soft: rgba(47, 91, 255, 0.28);
-  --blue-glow: rgba(47, 91, 255, 0.55);
-  --sky-soft: rgba(86, 189, 248, 0.22);
-  --sky-glow: rgba(86, 189, 248, 0.38);
-  --orange-soft: rgba(240, 165, 58, 0.22);
-  --orange-glow: rgba(240, 165, 58, 0.34);
-  --lavender-soft: rgba(184, 194, 255, 0.22);
-  --lavender-glow: rgba(184, 194, 255, 0.34);
+  --blue-soft: rgba(37, 186, 237, 0.28);
+  --blue-glow: rgba(37, 186, 237, 0.55);
+  --sky-soft: rgba(103, 197, 172, 0.22);
+  --sky-glow: rgba(103, 197, 172, 0.38);
+  --orange-soft: rgba(241, 95, 49, 0.22);
+  --orange-glow: rgba(241, 95, 49, 0.34);
+  --lavender-soft: rgba(203, 164, 204, 0.22);
+  --lavender-glow: rgba(203, 164, 204, 0.34);
   --lime-soft: rgba(119, 192, 73, 0.20);
   --lime-glow: rgba(119, 192, 73, 0.30);
-  --red-soft: rgba(255, 107, 122, 0.22);
-  --red-glow: rgba(255, 107, 122, 0.32);
+  --red-soft: rgba(236, 44, 61, 0.22);
+  --red-glow: rgba(236, 44, 61, 0.32);
 }
 
 /* ===== GLOBAL SETTINGS ===== */
@@ -92,6 +92,7 @@ h3 {
   margin-bottom: 16px;
   font-weight: 300;
   letter-spacing: 0.15rem;
+  line-height: 1.5;
 }
 
 h4 {
@@ -188,20 +189,17 @@ p {
 /* ===== HERO SECTION ===== */
 .hero {
   background: var(--bg);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .hero .content {
-  max-width: 85%;
+  width: 100%;
 }
 
 .hero h1 {
   font-size: 2.5rem;
   font-weight: 300;
   letter-spacing: 0.3rem;
+  text-align: center;
 }
 
 .hero h2 {
@@ -209,6 +207,7 @@ p {
   letter-spacing: 0.15rem;
   margin-bottom: 20px;
   opacity: 0.8;
+  text-align: center;
 }
 
 .hero p {
@@ -236,17 +235,24 @@ p {
 /* ===== CONCLUSION SECTION ===== */
 .conclusion {
   background: var(--bg);
-  text-align: center;
 }
 
 .conclusion h2 {
   font-weight: 300;
   letter-spacing: 0.3rem;
+  text-align: center;
+}
+
+.conclusion h3 {
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  opacity: 0.85;
+  text-align: center;
 }
 
 .conclusion p {
-  max-width: 85%;
-  margin: 0 auto;
   font-size: 0.9rem;
   line-height: 1.6;
   letter-spacing: 0.05rem;
@@ -672,7 +678,7 @@ footer {
   min-height: 560px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 #euiScrolly.scrolly-stack #eui-chart svg {

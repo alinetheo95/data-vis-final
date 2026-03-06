@@ -48,7 +48,7 @@ const fmtArea = d3.format(',.0f');
 
   const colors = {
     down: '#77c049',   // lime
-    up: '#56bdf8'      // blue
+    up: '#25baed'      // blue
   };
 
   data.forEach((d, i) => {

@@ -14,12 +14,12 @@
         const COLOR_AXIS = cssVar("--axis", "rgba(255,255,255,0.28)");
         const COLOR_GRID = cssVar("--grid", "rgba(255,255,255,0.10)");
 
-        const COLOR_BLUE = cssVar("--blue", "#3b82f6");
-        const COLOR_CYAN = cssVar("--cyan", "#38bdf8");
-        const COLOR_PURPLE = cssVar("--purple", "#a5b4fc");
-        const COLOR_LIME = cssVar("--lime", "#22c55e");
-        const COLOR_ORANGE = cssVar("--orange", "#f59e0b");
-        const COLOR_PINK = cssVar("--pink", "#fb7185");
+        const COLOR_BLUE = cssVar("--blue", "#25baed");
+        const COLOR_CYAN = cssVar("--cyan", "#67c5ac");
+        const COLOR_PURPLE = cssVar("--purple", "#cba4cc");
+        const COLOR_LIME = cssVar("--lime", "#77c049");
+        const COLOR_ORANGE = cssVar("--orange", "#f15f31");
+        const COLOR_PINK = cssVar("--pink", "#ec2c3d");
         const COLOR_GRAY = cssVar("--muted", "#94a3b8");
         const file24 = "dataset/slim/slim_energy_nyc_22_23_24.csv";
 
@@ -47,6 +47,15 @@
             return floor > 0;
         }
 
+        function cleanLabel(name) {
+            // Decode HTML entities (e.g. &amp; → &)
+            name = name.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+            // For address-style names (multiple commas), keep only city portion
+            const parts = name.split(",");
+            if (parts.length >= 3) name = parts[0] + "," + parts[1];
+            return name.trim();
+        }
+
         d3.csv(file24, parse24).then((data) => {
             const d24 = data.filter(d => d.year === 2024);
             const dc = d24.filter(isDataCenter);
@@ -60,7 +69,7 @@
 
             const avgNonDC = ndc.length > 0 ? d3.mean(ndc, d => d.eui) : 0;
 
-            const margin = { top: 100, right: 200, bottom: 120, left: 150 };
+            const margin = { top: 100, right: 60, bottom: 160, left: 120 };
 
             // Responsive sizing (prevents overflow / layout break)
             const host = document.getElementById("eui-chart");
@@ -105,14 +114,14 @@
 
             // Prepare chart data
             const chartData = [
-                { label: "Avg Office w/out Data Centers", eui: avgNonDC, dcGFA: null, color: COLOR_GRAY, shortLabel: "Avg Office" },
+                { label: "Avg Office w/out Data Centers", eui: avgNonDC, dcGFA: null, color: COLOR_GRAY, shortLabel: "Average Non-Data Center Office" },
                 ...topThreeDC.map((b, i) => ({
-                    label: b.propertyName.length > 20 ? b.propertyName.substring(0, 17) + "..." : b.propertyName,
+                    label: b.propertyName,
                     fullName: b.propertyName,
                     eui: b.eui,
                     dcGFA: parseNumber(b.dcFloorArea),
                     color: [COLOR_BLUE, COLOR_ORANGE, COLOR_PURPLE][i],
-                    shortLabel: `DC ${i + 1}`
+                    shortLabel: cleanLabel(b.propertyName)
                 }))
             ];
 
@@ -184,46 +193,36 @@
                 });
 
 
-            // X axis labels
+            // X axis labels — rotated to prevent horizontal overlap
             const xLabels = svg.selectAll(".x-label")
                 .data(chartData)
                 .enter()
                 .append("text")
                 .attr("class", "x-label")
                 .attr("x", (d, i) => xPositions[i] + barWidth / 2)
-                .attr("y", height + 35)
-                .attr("text-anchor", "middle")
-                .style("font-size", "13px")
+                .attr("y", height + 10)
+                .attr("text-anchor", "end")
+                .attr("transform", (d, i) => `rotate(-40, ${xPositions[i] + barWidth / 2}, ${height + 10})`)
+                .style("font-size", "12px")
                 .style("font-weight", "600")
                 .style("fill", COLOR_TEXT)
-                .each(function(d) {
-                    const lines = d.label.split('\n');
-                    const text = d3.select(this);
-                    lines.forEach((line, i) => {
-                        text.append("tspan")
-                            .attr("x", text.attr("x"))
-                            .attr("dy", i === 0 ? 0 : "1.2em")
-                            .text(line);
-                    });
-                });
+                .text(d => d.shortLabel);
 
-            // DC GFA labels (below x-axis labels)
+            // DC GFA labels — placed inside top of each bar to avoid bottom crowding
             const gfaLabels = svg.selectAll(".gfa-label")
                 .data(chartData.filter(d => d.dcGFA !== null))
                 .enter()
                 .append("text")
                 .attr("class", "gfa-label")
                 .attr("x", (d, i) => xPositions[i + 1] + barWidth / 2)
-                .attr("y", height + 80)
+                .attr("y", d => yScale(d.eui) + 20)
                 .attr("text-anchor", "middle")
-                .style("font-size", "11px")
-                .style("fill", "rgba(255,255,255,0.55)")
-                .attr("opacity", 0);
-
-            gfaLabels.append("tspan")
-                .attr("x", function() { return d3.select(this.parentNode).attr("x"); })
+                .attr("dominant-baseline", "hanging")
+                .style("font-size", "10px")
                 .style("font-weight", "600")
-                .text(d => `Data Center Floor Area: ${d3.format(",")(d.dcGFA)} ft²`);
+                .style("fill", "rgba(255,255,255,0.70)")
+                .attr("opacity", 0)
+                .text(d => `${d3.format(",")(d.dcGFA)} ft²`);
 
             // Multiplier indicators (show comparison to avg)
             const multiplierLabels = svg.selectAll(".multiplier-label")

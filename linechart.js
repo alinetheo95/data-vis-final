@@ -9,7 +9,7 @@
 
   // Accents (multi-color, dark background)
   // Energy = cyan, GHG = lime (matches the rest of the site palette)
-  const COLOR_ENERGY = "#56bdf8"; // cyan
+  const COLOR_ENERGY = "#25baed"; // cyan
   const COLOR_GHG = "#77c049";    // lime
 
   // Optional extra accents (not all used here, kept for consistency)
@@ -18,7 +18,7 @@
   const COLOR_YELLOW = "#f6c94a";
 
   // Glows tuned per-series
-  const COLOR_ENERGY_GLOW = "rgba(86,189,248,0.60)";
+  const COLOR_ENERGY_GLOW = "rgba(37,186,237,0.60)";
   const COLOR_GHG_GLOW = "rgba(119,192,73,0.55)";
 const file20 = "dataset/slim/slim_energy_nyc_20.csv";
 const file21 = "dataset/slim/slim_energy_nyc_21.csv";
@@ -349,7 +349,7 @@ Promise.all([
         .append("text")
         .attr("class", "count-label")
         .attr("x", d => x(d.year))
-        .attr("y", height + 25)
+        .attr("y", height + 42)
         .attr("text-anchor", "middle")
         .style("font-size", "10px")
         .style("fill", COLOR_TEXT_DIM)

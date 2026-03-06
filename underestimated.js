@@ -95,10 +95,10 @@
             const C_MUTED = "#9ca3af";
             const C_GRID = "rgba(255,255,255,0.10)";
             const C_BASELINE = "rgba(255,255,255,0.16)";
-            const C_BLUE = "#3b82f6";
-            const C_BLUE_SOFT = "#60a5fa";
-            const C_CYAN = "#38bdf8";
-            const C_ALERT = "#fb7185";
+            const C_BLUE = "#25baed";
+            const C_BLUE_SOFT = "#25baed";
+            const C_CYAN = "#67c5ac";
+            const C_ALERT = "#ec2c3d";
 
             // Title
             const title = svg.append("text")

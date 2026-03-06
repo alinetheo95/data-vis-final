@@ -31,7 +31,7 @@ const yAxisG = g.append("g");
 const montrealYear  = 1987; // Montreal Protocol signature year
 
 // Unified blue/yellow palette for bars
-const COLOR_BLUE = "#56bdf8";
+const COLOR_BLUE = "#25baed";
 const COLOR_YELLOW = "#f6c94a";
 const COLOR_BASELINE = "rgba(207,214,223,0.65)";
 
